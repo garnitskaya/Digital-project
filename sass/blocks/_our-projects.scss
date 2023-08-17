@@ -1,0 +1,183 @@
+.our-projects {
+  background: $white;
+
+  &__container {
+    position: relative;
+    padding: 85px 0 100px;
+  }
+
+  &__wrap {
+    margin: 60px 0 0;
+    @include flex(30px);
+    flex-wrap: wrap;
+
+    > :nth-child(1),
+    > :nth-child(2) {
+      flex: 1 1 calc(100% / 2 - 30px / 2);
+    }
+
+    > :nth-child(3) {
+      flex: 1 1 calc(20% - 30px *2 / 3);
+    }
+
+    > :nth-child(4) {
+      flex: 1 1 calc(40% - 30px *2 / 3);
+    }
+
+    > :nth-child(5) {
+      flex: 1 1 calc(30% - 30px *2 / 3);
+    }
+  }
+
+  &__block {
+    height: auto;
+
+    >img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .block {
+    position: relative;
+    transform: scale(0);
+    transition: transform 0.8s ease 0s;
+
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &__title {
+      padding: 48px 78px;
+      color: $white;
+      font-size: 64px;
+      font-weight: nth($font-weight, 5);
+      text-transform: uppercase;
+    }
+
+    &.active {
+      background: $gray-1;
+
+      &>img {
+        opacity: .2;
+      }
+    }
+
+    & .btn {
+      @include btn($white, transparent, 6%);
+      bottom: 10%;
+
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+
+  &.active {
+    .block {
+      transform: scale(1);
+
+      @for $var from 1 to 6 {
+        $delay: $var*.2;
+
+        &:nth-child(#{$var}) {
+          @if $var==1 {
+            transition: all 0.8s ease 0s;
+          }
+
+          @else {
+            transition: all 0.8s ease #{$delay +s};
+          }
+        }
+      }
+    }
+  }
+
+  & .btn {
+    @include btn($white, $gray-1, auto, 0);
+
+    svg path {
+      fill: $white;
+    }
+  }
+}
+
+@include laptop {
+  .our-projects {
+
+    &__wrap {
+      margin: 40px 0 0;
+    }
+
+    .block {
+
+      &__title {
+        padding: 40px;
+        font-size: 48px;
+      }
+    }
+  }
+}
+
+@include tablet-portrait {
+  .our-projects {
+
+    &__container {
+      padding: 100px 0;
+    }
+
+    .block {
+      &__title {
+        padding: 25px;
+        font-size: 30px;
+      }
+
+
+      .btn {
+        padding: 10px !important;
+        width: 150px !important;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .our-projects {
+
+    &__container {
+      padding: 60px 0;
+    }
+
+  }
+}
+
+@include mobil {
+  .our-projects {
+
+    &__container {
+      padding: 30px 0;
+
+      &>.btn {
+        position: relative;
+        margin: 20px 0 0;
+      }
+    }
+
+    &__wrap {
+      gap: 20px;
+    }
+
+    .block {
+      &__title {
+        font-size: 16px;
+      }
+    }
+
+
+  }
+}

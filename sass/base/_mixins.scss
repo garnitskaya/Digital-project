@@ -1,0 +1,50 @@
+@mixin flex($gap: 0, $fd: row, $justifyContent: normal, $alignItems: normal) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+@mixin btn($color: $gray-1, $bg: $white, $left: -1px, $right: auto) {
+  padding: 30px 0 29px;
+  position: absolute;
+  width: 222px;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  background: $bg ;
+  color: $color;
+  left: $left;
+  right: $right;
+  bottom: -1px;
+
+  &__wrap {
+    position: relative;
+    left: -5%;
+  }
+
+  &__title {
+    margin: 0 12px 0 0;
+  }
+
+  &__arrow {
+    position: relative;
+
+    >svg {
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  &:hover svg {
+    animation: arrow 1.5s linear infinite;
+  }
+
+}
+
+@mixin title {
+  color: $gray-4;
+  font-size: nth($font-size, 1);
+  font-weight: nth($font-weight, 1);
+}

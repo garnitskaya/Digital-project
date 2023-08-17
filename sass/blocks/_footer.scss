@@ -1,0 +1,155 @@
+.footer {
+  background: $gray;
+
+  &-top {
+    padding: 58px 0 60px;
+
+    &__wrap {
+      margin: 0 0 0 -20px;
+      @include flex(150px);
+    }
+
+    &__title {
+      color: $white;
+      font-size: 16px;
+      font-weight: nth($font-weight, 5);
+    }
+
+    &__block {
+      margin: 25px 0 0;
+
+      a,
+      address {
+        color: $white;
+        font-size: 14px;
+        font-weight: nth($font-weight, 3);
+        line-height: 24px;
+        letter-spacing: 0.42px;
+        font-style: normal;
+      }
+    }
+
+    .info-block {
+      margin: 0 0 0 -45px;
+    }
+
+    .nav {
+
+      &__link {
+        &:not(:first-child) {
+          margin: 16px 0 0;
+        }
+      }
+    }
+
+    .contacts-block {
+      @include flex(40px, column);
+      max-width: 300px;
+
+      &__address,
+      &__mail,
+      &__tel {
+        padding: 0 0 0 30px;
+        background: 0 0 no-repeat;
+      }
+
+      &__address {
+        background-image: url('/icons/Vector.svg');
+      }
+
+      &__mail {
+        background-image: url('/icons/mail.svg');
+      }
+
+      &__tel {
+        background-image: url('/icons/tel.svg');
+      }
+    }
+
+    .social-block {
+      flex: 1 0;
+
+      &__link:not(:first-child) {
+        margin: 0 0 0 40px;
+      }
+
+    }
+  }
+
+  &-bottom {
+    border-top: 1px solid $white-1;
+    padding: 24px 0;
+
+    &__text {
+      text-align: center;
+      color: $gray-2;
+      font-family: $sans-font;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &-top {
+
+      &__wrap {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .footer {
+    &-top {
+
+      &__wrap {
+        gap: 50px 85px;
+      }
+    }
+  }
+}
+
+@include tablet-portrait {
+  .footer {
+    &-top {
+      &__wrap {
+        margin: 0;
+        flex-wrap: wrap;
+      }
+
+      .info-block {
+        margin: 0;
+      }
+
+      .social-block {
+
+        &__link:not(:first-child) {
+          margin: 0 0 0 25px;
+        }
+
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    &-top {
+      padding: 30px;
+
+      &__logo {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      &__wrap {
+        justify-content: center;
+        gap: 50px;
+      }
+
+    }
+  }
+}

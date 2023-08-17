@@ -1,0 +1,26 @@
+@keyframes arrow {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  25% {
+    left: 15px;
+    opacity: 0.2;
+  }
+
+  50% {
+    left: 0;
+    opacity: 1;
+  }
+
+  75% {
+    left: 15px;
+    opacity: 0.2;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}

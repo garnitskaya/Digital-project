@@ -1,0 +1,67 @@
+@import 'libs/global';
+@import 'libs/fonts';
+@import 'base/animation';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/include-breakpoints';
+
+* {
+  font-family: $main-font;
+}
+
+.btn {
+  @include btn;
+}
+
+.title {
+  @include title;
+}
+
+.container {
+  max-width: calc(1170px + 15px *2);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@include laptop {
+  .title {
+    font-size: nth($font-size, 2);
+  }
+}
+
+@include tablet-portrait {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@include tablet {
+  .container {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: nth($font-size, 3);
+  }
+
+  .btn {
+    padding: 20px 0 !important;
+    width: 170px !important;
+  }
+}
+
+@include mobil {
+  .title {
+    font-size: nth($font-size, 4);
+  }
+}
+
+
+@import 'blocks/header';
+@import 'blocks/hamburger';
+@import 'blocks/projects';
+@import 'blocks/about';
+@import 'blocks/main-tasks';
+@import 'blocks/our-projects';
+@import 'blocks/form-section';
+@import 'blocks/footer';
